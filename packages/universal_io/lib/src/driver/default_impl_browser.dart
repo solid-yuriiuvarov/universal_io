@@ -40,8 +40,10 @@ final IODriver defaultIODriver = IODriver(
   networkInterfaceOverrides: NetworkInterfaceOverrides(),
 );
 
-String _operatingSystemFromUserAgent(String userAgent) {
+String _operatingSystemFromUserAgent(String customUserAgent) {
+  print('customUserAgent: $customUserAgent');
   final userAgent = html.window.navigator.userAgent;
+  print('userAgent: $userAgent');
   if (userAgent.contains('Mac OS X')) {
     return 'macos';
   }
